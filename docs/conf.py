@@ -12,7 +12,6 @@
 #
 import os
 import sys
-
 sys.path.append(os.path.join(os.path.abspath(os.pardir)))
 sys.path.insert(0, os.path.abspath('../..'))
 autodoc_mock_imports = ["_tkinter"]
@@ -20,9 +19,12 @@ autodoc_mock_imports = ["_tkinter"]
 
 # -- Project information -----------------------------------------------------
 
-project = 'gengeo'
-copyright = '2022, geg eth'
-author = 'geg eth'
+project = 'genGEO'
+copyright = '2022, Geothermal Energy and Geofluids, ETH Zürich'
+author = 'GEG-ETH Zürich'
+
+# The full version, including alpha/beta/rc tags
+release = '0.0.1'
 
 
 # -- General configuration ---------------------------------------------------
@@ -35,7 +37,8 @@ extensions = [
     'sphinx.ext.autosummary',
     'sphinx.ext.todo',
     'sphinx.ext.viewcode',
-    'sphinx.ext.napoleon',
+    'myst_parser',
+    'sphinx_thebe',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -52,8 +55,31 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-#html_theme = 'alabaster'
-html_theme = "sphinx_book_theme"
+html_theme = 'sphinx_book_theme'
+
+
+
+html_logo = '../media/logo.jpg'
+html_title = 'Documentation'
+
+html_theme_options = {
+    "path_to_docs": "docs",
+    "repository_url": "https://github.com/GEG-ETHZ/genGEO",
+    "launch_buttons": {
+        "binderhub_url": "https://mybinder.org",
+        "colab_url": "https://colab.research.google.com/",
+        "deepnote_url": "https://deepnote.com/",
+        "notebook_interface": "jupyterlab",
+        "thebe": True,
+        # "jupyterhub_url": "https://datahub.berkeley.edu",  # For testing
+    },
+    "use_edit_page_button": True,
+    "use_issues_button": True,
+    "use_repository_button": True,
+    "use_download_button": True,
+    "logo_only": True,
+    "show_toc_level": 2,
+}
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
