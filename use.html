@@ -1,0 +1,594 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Use sphinx-thebe &#8212; sphinx-thebe</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=84ace793992934648b4de8eed757e5a2" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.9d8b4a8b9bb19db25eeaddc40d639ba2.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Configuration" href="configure.html" />
+    <link rel="prev" title="sphinx-thebe" href="index.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<div class="col-12 col-md-3 bd-sidebar site-navigation " id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">sphinx-thebe</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Use
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     sphinx-thebe
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="configure.html">
+   Configuration
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="examples/notebooks.html">
+   Jupyter Notebooks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="contribute.html">
+   Contribute to
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     sphinx-thebe
+    </span>
+   </code>
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<!-- This is an invisible pixel that we watch to see if we've scrolled. -->
+<div class="sbt-scroll-pixel-helper"></div>
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            <div class="topbar-left">
+                
+                <label class="nav-toggle-button" for="__navigation">
+                    <div class="visually-hidden">Toggle navigation</div>
+                    <i class="fas fa-bars"></i>
+                </label>
+                
+            </div>
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/use.md.txt"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/sphinx-thebe"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/sphinx-thebe/issues/new?title=Issue%20on%20page%20%2Fuse.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#get-started">
+   Get started
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mark-elements-for-thebe">
+     Mark elements for thebe
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#add-an-activate-button-to-your-page">
+     Add an activate button to your page
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#an-example">
+     An example
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#customize-your-environment">
+     Customize your environment
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-few-examples">
+   A few examples
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#code-outputs">
+     Code outputs
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dataframes">
+     DataFrames
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#png-outputs">
+     PNG outputs
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#structure-of-a-thebe-cell">
+   Structure of a
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     thebe
+    </span>
+   </code>
+   cell
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#selectors-sphinx-thebe-looks-for-by-default">
+   Selectors
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     sphinx-thebe
+    </span>
+   </code>
+   looks for by default
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#interactive-outputs">
+   Interactive outputs
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Use sphinx-thebe</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#get-started">
+   Get started
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mark-elements-for-thebe">
+     Mark elements for thebe
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#add-an-activate-button-to-your-page">
+     Add an activate button to your page
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#an-example">
+     An example
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#customize-your-environment">
+     Customize your environment
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-few-examples">
+   A few examples
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#code-outputs">
+     Code outputs
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dataframes">
+     DataFrames
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#png-outputs">
+     PNG outputs
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#structure-of-a-thebe-cell">
+   Structure of a
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     thebe
+    </span>
+   </code>
+   cell
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#selectors-sphinx-thebe-looks-for-by-default">
+   Selectors
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     sphinx-thebe
+    </span>
+   </code>
+   looks for by default
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#interactive-outputs">
+   Interactive outputs
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="use-sphinx-thebe">
+<h1>Use <code class="docutils literal notranslate"><span class="pre">sphinx-thebe</span></code><a class="headerlink" href="#use-sphinx-thebe" title="Permalink to this headline">¶</a></h1>
+<p><code class="docutils literal notranslate"><span class="pre">sphinx-thebe</span></code> uses remote Jupyter kernels to execute your page’s code and return the
+results, and <a class="reference external" href="https://mybinder.org">Binder</a> to run the infrastructure for execution.
+You can do nearly anything with <code class="docutils literal notranslate"><span class="pre">sphinx-thebe</span></code> that you could do from within a Jupyter Notebook cell.</p>
+<div class="section" id="get-started">
+<h2>Get started<a class="headerlink" href="#get-started" title="Permalink to this headline">¶</a></h2>
+<p>There are two steps to using <code class="docutils literal notranslate"><span class="pre">sphinx-thebe</span></code>. First, you must mark certain
+parts of your page as “ready for thebe”. Next, you must insert a button onto
+the page to tell Thebe to initialize.</p>
+<div class="section" id="mark-elements-for-thebe">
+<h3>Mark elements for thebe<a class="headerlink" href="#mark-elements-for-thebe" title="Permalink to this headline">¶</a></h3>
+<p>By default, thebe will be run on any elements in your documentation that contain
+the class <code class="docutils literal notranslate"><span class="pre">thebe</span></code> and that have a <code class="docutils literal notranslate"><span class="pre">&lt;pre</span></code>&gt; element underneath them.</p>
+<p>You can add code blocks like so:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```{code-block} python
+:class: thebe
+print(&quot;hello world!&quot;)
+```
+</pre></div>
+</div>
+<p>By default, <code class="docutils literal notranslate"><span class="pre">sphinx-thebe</span></code> will look for any HTML <code class="docutils literal notranslate"><span class="pre">&lt;pre&gt;</span></code> element <em>inside</em> the code
+block. Thebe will run on that element.</p>
+</div>
+<div class="section" id="add-an-activate-button-to-your-page">
+<h3>Add an activate button to your page<a class="headerlink" href="#add-an-activate-button-to-your-page" title="Permalink to this headline">¶</a></h3>
+<p>Next, insert an “activate” button in your documentation with the following
+directive:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```{thebe-button}
+```
+</pre></div>
+</div>
+</div>
+<div class="section" id="an-example">
+<h3>An example<a class="headerlink" href="#an-example" title="Permalink to this headline">¶</a></h3>
+<p>Here is what it looks like when you add the two snippets above in one example:</p>
+<p>First the code block:</p>
+<div class="thebe highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;hello world!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>And now the Thebe button:</p>
+<button title="Run code" class="thebelab-button thebe-launch-button" onclick="initThebe()">Run code</button><p>Clicking this button will activate Thebe on the page.
+If you’d like to manually add your own button (e.g. with your own extension or theme), see <a class="reference internal" href="configure.html#add-custom-button"><span class="std std-ref">Adding your own button to start Thebe</span></a>.</p>
+</div>
+<div class="section" id="customize-your-environment">
+<h3>Customize your environment<a class="headerlink" href="#customize-your-environment" title="Permalink to this headline">¶</a></h3>
+<p>By default, <code class="docutils literal notranslate"><span class="pre">sphinx-thebe</span></code> will serve the Binder environment for the
+<a class="reference external" href="https://github.com/binder-examples/jupyter-stacks-datascience">jupyter-stacks-datascience repository</a>.
+See <a class="reference internal" href="configure.html"><span class="doc std std-doc">Configuration</span></a> for information on choosing your own environment.</p>
+</div>
+</div>
+<div class="section" id="a-few-examples">
+<h2>A few examples<a class="headerlink" href="#a-few-examples" title="Permalink to this headline">¶</a></h2>
+<p>For example, click the button below (if you have not already clicked the button at the top of the page) and see the sections underneath to watch <code class="docutils literal notranslate"><span class="pre">sphinx-thebe</span></code> in action:</p>
+<button title="Launch examples below!" class="thebelab-button thebe-launch-button" onclick="initThebe()">Launch examples below!</button><div class="section" id="code-outputs">
+<h3>Code outputs<a class="headerlink" href="#code-outputs" title="Permalink to this headline">¶</a></h3>
+<div class="thebe thebe-init highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">1337</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">:</span><span class="mi">10</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="dataframes">
+<h3>DataFrames<a class="headerlink" href="#dataframes" title="Permalink to this headline">¶</a></h3>
+<div class="thebe highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">])</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="png-outputs">
+<h3>PNG outputs<a class="headerlink" href="#png-outputs" title="Permalink to this headline">¶</a></h3>
+<div class="thebe highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="o">*</span><span class="n">data</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">s</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="structure-of-a-thebe-cell">
+<h2>Structure of a <code class="docutils literal notranslate"><span class="pre">thebe</span></code> cell<a class="headerlink" href="#structure-of-a-thebe-cell" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">sphinx-thebe</span></code> can work with two basic code cell structures:</p>
+<ol>
+<li><p><strong>A single code cell</strong>. In this case, there is just a single code cell that has content that should be made executable, like so:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;highlight&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">pre</span><span class="p">&gt;</span>print(&quot;hi!&quot;)<span class="p">&lt;/</span><span class="nt">pre</span><span class="p">&gt;</span>
+ <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>An input/output cell</strong>. Jupyter tools define code cells as a combination of inputs and outputs.
+For example:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;cell&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;cell_input&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">pre</span><span class="p">&gt;</span>print(&quot;hi!&quot;)<span class="p">&lt;/</span><span class="nt">pre</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;cell_output&quot;</span><span class="p">&gt;</span>
+    ...outputs here...
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>In this case, <code class="docutils literal notranslate"><span class="pre">sphinx-thebe</span></code> will treat the <code class="docutils literal notranslate"><span class="pre">cell_output</span></code> in a special fashion, so that it is cleared when you first run its corresponding input code.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="selectors-sphinx-thebe-looks-for-by-default">
+<span id="use-selectors"></span><h2>Selectors <code class="docutils literal notranslate"><span class="pre">sphinx-thebe</span></code> looks for by default<a class="headerlink" href="#selectors-sphinx-thebe-looks-for-by-default" title="Permalink to this headline">¶</a></h2>
+<p>By default <code class="docutils literal notranslate"><span class="pre">sphinx-thebe</span></code> will look for two types of code blocks to turn into interactive cells:</p>
+<ul class="simple">
+<li><p>Cells that match a custom class you can add manually.
+It will match:</p>
+<ul>
+<li><p>Whole cells: match <code class="docutils literal notranslate"><span class="pre">.thebe</span></code></p></li>
+<li><p>Cell inputs: match <code class="docutils literal notranslate"><span class="pre">pre</span></code></p></li>
+<li><p>Cell outputs: match <code class="docutils literal notranslate"><span class="pre">.output</span></code></p></li>
+</ul>
+</li>
+<li><p>Cells that match <a class="reference external" href="https://myst-nb.readthedocs.io/">MyST-NB code cells</a>.
+It will match:</p>
+<ul>
+<li><p>Whole cells: match <code class="docutils literal notranslate"><span class="pre">.cell</span></code></p></li>
+<li><p>Cell inputs: match <code class="docutils literal notranslate"><span class="pre">.cell_input</span></code></p></li>
+<li><p>Cell outputs: match <code class="docutils literal notranslate"><span class="pre">.cell_output</span></code></p></li>
+</ul>
+</li>
+</ul>
+<p>To customize the selectors that <code class="docutils literal notranslate"><span class="pre">sphinx-thebe</span></code> looks for, see <a class="reference internal" href="configure.html#configure-selector"><span class="std std-ref">Change the HTML selector to mark interactive cells</span></a>.</p>
+</div>
+<div class="section" id="interactive-outputs">
+<h2>Interactive outputs<a class="headerlink" href="#interactive-outputs" title="Permalink to this headline">¶</a></h2>
+<p>Interactive outputs work with <code class="docutils literal notranslate"><span class="pre">sphinx-thebe</span></code> <strong>if their web dependencies are loaded</strong>.</p>
+<p>Many interactive libraries assume that some javascript packages are pre-loaded in a notebook environment. For example, both Jupyter Lab and Notebook come bundled with <code class="docutils literal notranslate"><span class="pre">require.js</span></code>. To use visualization libraries that depend on this, <strong>you must load these libraries on your own in Sphinx</strong>. To do so, you can add the following to your <code class="docutils literal notranslate"><span class="pre">conf.py</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">setup</span><span class="p">(</span><span class="n">app</span><span class="p">):</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">add_js_file</span><span class="p">(</span><span class="s2">&quot;url-of-package.js&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Note that some visualization libraries output <em>bundles of JavaScript/HTML</em> that will work out-of-the-box. You should consult the documentation of the library you wish to use in order to figure out how to configure it properly. See <a class="reference external" href="https://thebe.readthedocs.io/en/latest/">the <code class="docutils literal notranslate"><span class="pre">thebe</span></code> examples</a> for examples of some popular visualization libraries.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "docs/."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="index.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">sphinx-thebe</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="configure.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Configuration</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Executable Book Project<br/>
+    
+        &copy; Copyright 2020, Executable Book Project.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
